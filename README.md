@@ -1,6 +1,5 @@
-# slnSchool_Management
+# School Management
 School Management
-
 
 This project will supply the need of a school who wants to eradicate all the paperworks. 
 The project will include following Modules
