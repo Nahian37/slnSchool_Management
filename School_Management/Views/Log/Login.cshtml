@@ -1,10 +1,32 @@
 ﻿@{
     Layout = null;
 }
-@{
-    ViewBag.Title = "Login";
-}
-
-<h2>Login</h2>
-<p>Welcome</p>
-
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+        <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/Styles/login.css" rel="stylesheet" />
+        <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    </head>
+    <body>
+        <article class="background-image"></article>
+        <article class="login-panel">
+            @using (Html.BeginForm("Login", "Log", FormMethod.Post, new { @class="login-form container" }))
+            {
+                <div class="form-group">
+                    <label for="user">Username: </label>
+                    <input type="text" class="form-control" name="user" id="user" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password: </label>
+                    <input type="password"  class="form-control" name="password" id="password" />
+                </div>                
+                <input type="submit" />
+            }
+        </article>
+    </body>
+</html>
