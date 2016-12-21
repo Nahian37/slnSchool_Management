@@ -15,18 +15,20 @@
     <body>
         <article class="background-image"></article>
         <article class="login-panel">
-            @using (Html.BeginForm("Login", "Log", FormMethod.Post, new { @class="login-form container-fluid" }))
+            @using (Html.BeginForm("Login", "Log", FormMethod.Post, new { @class="login-form" }))
             {
                 <div class="form-group">
                     <label for="user">Username: </label>
-                    <input type="text" class="form-control" name="user" id="user" />
+                    <input type="text" name="user" id="user" />
                 </div>
                 <div class="form-group">
                     <label for="password">Password: </label>
-                    <input type="password"  class="form-control" name="password" id="password" />
-                </div>                
-                <input type="submit" />
+                    <input type="password" name="password" id="password" />
+                </div>
+                <div class="form-group btn-submit">
+                    <input type="submit" value="Login" />
+                </div>
             }
-        </article>
+</article>
     </body>
 </html>
