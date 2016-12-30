@@ -13,17 +13,5 @@ namespace School_Management.Controllers
         {
             return View();
         }
-
-        [HttpPost]
-        public JsonResult LoginSubmit(string user, string password)
-        {
-            bool result = false;
-            if (user.Equals(password))
-            {
-                result = true;
-            }
-
-            return Json(result,JsonRequestBehavior.AllowGet);
-        }
     }
 }

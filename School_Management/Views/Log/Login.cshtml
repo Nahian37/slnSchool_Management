@@ -9,61 +9,26 @@
         <title>Login</title>
         <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
         <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="~/Styles/login.css" rel="stylesheet"/>
-        <script src="~/Scripts/jquery-3.1.1.min.js"></script>
-        <script src="~/Scripts/bootstrap.min.js"></script>
+        <link href="~/Styles/login.css" rel="stylesheet" />
         <script src="~/Scripts/modernizr-2.6.2.js"></script>
     </head>
     <body>
         <article class="background-image"></article>
         <article class="login-panel">
-            @using (Html.BeginForm("Login", "Log", FormMethod.Post, new {@class = "login-form"}))
+            @using (Html.BeginForm("Login", "Log", FormMethod.Post, new { @class="login-form" }))
             {
                 <div class="form-group">
                     <label for="user">Username: </label>
-                    <input type="text" id="user" name="user" id="user"/>
+                    <input type="text" name="user" id="user" />
                 </div>
                 <div class="form-group">
                     <label for="password">Password: </label>
-                    <input type="password" id="password" name="password" id="password"/>
+                    <input type="password" name="password" id="password" />
                 </div>
                 <div class="form-group btn-submit">
-                    <input type="button" id="login" value="Login"/>
+                    <input type="submit" value="Login" />
                 </div>
-                <p class="message"></p>
             }
-        </article>
-    <script type="text/javascript">
-        $(document).on("click", "#login", function(e) {
-            e.preventDefault();
-            var user = $('#user').val();
-            var password = $('#password').val();
-            var obj = {
-                user: user,
-                password: password
-            };
-            $.ajax({
-                type: "POST",
-                url: "@Url.Action("LoginSubmit", "Log")",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                data: JSON.stringify(obj),
-                success: function(result) {
-                    if (result == true) {
-                        $('.message').empty();
-                    } else {
-                        $('.message').empty();
-                        $('.message').css("color", "#ffffff");
-                        $('.message').css("font-weight", "bold");
-                        $('.message').css("text-align", "center");
-                        $('.message').append('Incorrect username or password');
-                    }
-                },
-                failure: function(response) {
-                    alert(response.d);
-                }
-            });
-        });
-    </script>
+</article>
     </body>
 </html>
